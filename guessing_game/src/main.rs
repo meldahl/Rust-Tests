@@ -22,10 +22,15 @@ fn main() {
         let guess: i8 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
-                println!("\nPlease input a number!\n");
+                println!("\nPlease only input a number between 1 and 100!\n");
                 continue;
             }
         };
+
+        if guess < 1 || guess > 100 {
+            println!("\nPlease only input a number between 1 and 100!\n");
+            continue;
+        }
 
         println!("You guessed: {guess}");
 
